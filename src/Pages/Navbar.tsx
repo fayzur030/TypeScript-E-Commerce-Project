@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FiShoppingCart, FiMenu, FiX } from 'react-icons/fi'
 import Search from './Search'
 import { Link } from 'react-router-dom'
+import { FaShoppingCart } from 'react-icons/fa'
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -67,8 +68,13 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li className='cursor-pointer hover:text-gray-400 px-4 py-2 md:p-0'>
-            <Link to='/product' onClick={() => setMenuOpen(false)}>
-              Product
+            <Link to='/login' onClick={() => setMenuOpen(false)}>
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link to='/cart' onClick={() => setMenuOpen(false)}>
+              <FaShoppingCart className='text-2xl transition-colors duration-300 hover:text-blue-400' />
             </Link>
           </li>
         </ul>

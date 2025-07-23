@@ -1,14 +1,14 @@
 import ProductList from '../Component/ProductList'
-import Cart from '../Component/Cart'
+import CartPage from './CartPage'
 
 const Home = () => {
   return (
-    <div className='flex flex-col md:flex-row gap-4 p-4'>
+    <div>
       <div className='bg-white rounded-lg shadow p-4 flex-1'>
         <ProductList />
       </div>
       <div className='bg-white rounded-lg shadow p-4 w-full md:w-1/3'>
-        <Cart />
+        <CartPage />
       </div>
     </div>
   )

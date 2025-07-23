@@ -8,7 +8,7 @@ const MainLayout: React.FC = () => {
     <>
       <Navbar />
       <Outlet />
-      <div className='min-w-full max-h-svh'></div>
+      <div className='min-h-screen flex flex-col'></div>
       <Footer />
     </>
   )
