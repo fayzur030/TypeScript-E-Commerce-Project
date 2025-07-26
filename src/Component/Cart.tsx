@@ -3,29 +3,31 @@ import type { CartItem } from '../Interface/CartItem'
 import { FaMinus } from 'react-icons/fa'
 import { IoMdAdd } from 'react-icons/io'
 import { FaDeleteLeft } from 'react-icons/fa6'
-const CartPage = () => {
+const Cart = () => {
   const cart = useCartStore((state) => state.cart)
   const removeFromCart = useCartStore((state) => state.removeFromCart)
   const remove_On_By_On = useCartStore((state) => state.remove_On_By_On)
   const add_To_Cart = useCartStore((state) => state.addToCart)
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
   return (
-    <div className='border p-4 rounded-lg shadow-md bg-white text-center w-full md:w-auto'>
+    <div className='border p-4 rounded-lg shadow-md bg-white dark:bg-gray-800 dark:text-white text-center w-full md:w-auto'>
       <h2 className='text-2xl font-semibold mb-4'>🛒 Cart </h2>
       <div>
         {cart.length === 0 ? (
-          <p>Cart is empty</p>
+          <p className=' dark:bg-gray-800 dark:text-white'>Cart is empty</p>
         ) : (
-          <div className='p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md'>
+          <div className='p-6 max-w-lg mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-md'>
             {cart.map((item: CartItem) => (
               <div
                 key={item.id}
-                className='border p-2 rounded flex justify-between items-center'
+                className='border p-2 rounded flex justify-between items-center  dark:bg-gray-800 dark:text-white'
               >
-                <div className='justify-center items-center p-2 border-b'>
-                  <h4 className='font-semibold text-gray-700'>{item.title}</h4>
+                <div className='justify-center items-center p-2 border-b  dark:bg-gray-800 dark:text-white'>
+                  <h4 className='font-semibold  dark:bg-gray-800 dark:text-white'>
+                    {item.title}
+                  </h4>
                   <h4>Quantity: {item.quantity}</h4>
-                  <p className='font-medium text-gray-600'>
+                  <p className='font-medium  dark:bg-gray-800 dark:text-white'>
                     Price: ${(item.price * item.quantity).toFixed(2)}
                   </p>
                   <div className='flex gap-4 justify-center mt-2'>
@@ -61,4 +63,4 @@ const CartPage = () => {
   )
 }
 
-export default CartPage
+export default Cart

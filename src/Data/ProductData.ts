@@ -17,7 +17,7 @@ export const products = [
   },
   {
     id: 2,
-    title: 'White Classic T-Shirt',
+    title: 'Black Classic T-Shirt',
     description:
       'Premium quality white t-shirt made with 100% organic cotton. Ideal for both casual and semi-formal occasions.',
     price: 500,
@@ -35,7 +35,7 @@ export const products = [
   },
   {
     id: 4,
-    title: 'Red Graphic T-Shirt',
+    title: 'Graphic T-Shirt',
     description:
       'Trendy red t-shirt with vibrant graphic print, suitable for parties, casual hangouts, and weekend fun.',
     price: 600,
@@ -70,7 +70,7 @@ export const products = [
   },
   {
     id: 8,
-    title: 'Yellow Summer T-Shirt',
+    title: 'Summer T-Shirt',
     description:
       'Bright yellow t-shirt, lightweight and airy. Designed to keep you cool and stylish during summer days.',
     price: 490,

@@ -6,4 +6,5 @@ export interface CartState {
   addToCart: (Product: Product) => void
   removeFromCart: (id: number) => void
   remove_On_By_On: (id: number) => void
+  Buy_Now: (id: number) => void
 }

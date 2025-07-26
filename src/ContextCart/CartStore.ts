@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import type { CartState } from '../Interface/CartState'
-import type { Product } from '../Data/ProductData'
+import { products, type Product } from '../Data/ProductData'
 
 export const useCartStore = create<CartState>((set) => ({
   cart: [],
@@ -40,4 +40,9 @@ export const useCartStore = create<CartState>((set) => ({
         )
         .filter((item) => item.quantity > 0),
     })),
+  Buy_Now: (id: number) =>
+    set(() => {
+      const product = products.find((product) => product.id === id)
+      return product ? { cart: [{ ...product, quantity: 1 }] } : { cart: [] }
+    }),
 }))

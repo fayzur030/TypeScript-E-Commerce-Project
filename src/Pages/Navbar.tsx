@@ -3,6 +3,8 @@ import { FiShoppingCart, FiMenu, FiX } from 'react-icons/fi'
 import Search from './Search'
 import { Link } from 'react-router-dom'
 import { FaShoppingCart } from 'react-icons/fa'
+import { FaCircleUser } from 'react-icons/fa6'
+import ToggleBtn from '../Component/Toggle/ToggleBtn'
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -69,14 +71,23 @@ const Navbar: React.FC = () => {
           </li>
           <li className='cursor-pointer hover:text-gray-400 px-4 py-2 md:p-0'>
             <Link to='/login' onClick={() => setMenuOpen(false)}>
-              Login
+              <FaCircleUser className='text-2xl transition-colors duration-300 hover:text-blue-400' />
             </Link>
           </li>
           <li>
-            <Link to='/cart' onClick={() => setMenuOpen(false)}>
+            <button
+              className='btn'
+              onClick={() => {
+                const modal = document.getElementById(
+                  'cart_id'
+                ) as HTMLDialogElement | null
+                if (modal) modal.showModal()
+              }}
+            >
               <FaShoppingCart className='text-2xl transition-colors duration-300 hover:text-blue-400' />
-            </Link>
+            </button>
           </li>
+          <ToggleBtn />
         </ul>
       </div>
 
